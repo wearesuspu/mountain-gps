@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountain GPS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">MOUNTAIN GPS</p>
+          <h1>Find your next safe line.</h1>
+          <p class="subtitle">Simple route ideas for mountain bikers and moto riders.</p>
+        </div>
+        <div class="signal-pill"><span class="signal-dot"></span><span id="signalText">Offline ready</span></div>
+      </section>
+
+      <section class="controls card">
+        <div class="field-group">
+          <label for="rideType">I am riding</label>
+          <select id="rideType">
+            <option value="bike">Mountain bike</option>
+            <option value="moto">Moto-cross bike</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="skill">My skill level</label>
+          <select id="skill">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <button id="findRoute" class="primary-button">Find routes</button>
+      </section>
+
+      <section class="map-card card" aria-label="Trail preview map">
+        <div class="map-grid"></div>
+        <div class="trail trail-a"></div><div class="trail trail-b"></div><div class="trail trail-c"></div><div class="trail trail-d"></div><div class="trail trail-e"></div>
+        <div id="startLabel" class="map-label label-start">START</div><div id="endLabel" class="map-label label-lookout">LOOKOUT</div>
+        <div class="map-pin pin-start">●</div><div class="map-pin pin-end">★</div>
+        <div id="previewBadge" class="preview-badge">Preview route</div>
+        <div class="map-overlay"><strong id="mapTitle">Cedar Loop</strong><span id="mapMeta">4.8 mi · Beginner · 380 ft climb</span><button id="saveOffline" class="offline-button">⇩ Save map offline</button><small id="offlineStatus">Works later without cell signal</small></div>
+      </section>
+
+      <section class="snapshots" aria-label="Trail pictures">
+        <div class="snapshot snapshot-one"><span class="snapshot-art">🌲</span><span><strong id="snapshotOneTitle">Forest flow</strong><small id="snapshotOneMeta">Smooth turns · Bike</small></span></div>
+        <div class="snapshot snapshot-two"><span class="snapshot-art">⛰️</span><span><strong id="snapshotTwoTitle">Mountain climb</strong><small id="snapshotTwoMeta">Big views · Beginner</small></span></div>
+        <div class="snapshot snapshot-three"><span class="snapshot-art">🏁</span><span><strong id="snapshotThreeTitle">Open track</strong><small id="snapshotThreeMeta">Wide dirt · Moto</small></span></div>
+      </section>
+
+      <section class="safety card">
+        <div class="safety-icon">!</div>
+        <div><strong>Ride smart</strong><p>Maps can be wrong or outdated. Check signs, wear a proper helmet, bring water, and tell someone your plan.</p></div>
+      </section>
+
+      <section class="routes-section">
+        <div class="section-heading"><div><p class="eyebrow">ROUTE IDEAS</p><h2 id="routeHeading">Good for a first ride</h2></div><span id="routeCount">3 routes</span></div>
+        <div id="routeList" class="route-list"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
